@@ -6,7 +6,7 @@ This project focuses on analyzing and classifying customer reviews for women's c
 
 ## Dataset
 
-- **Source:** `Womens Clothing E-Commerce Reviews.csv`
+- **Source:** `[Womens Clothing E-Commerce Reviews.csv](https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews?resource=download)`
 - **Rows:** 23,486  
 - **Columns:** 11  
 - **Content:** Customer reviews, ratings, product categories, and department information.
