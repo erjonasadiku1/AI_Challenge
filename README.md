@@ -92,7 +92,7 @@ def predict_category(text, model, vectorizer, label_encoder):
 Example:
 
 user_input = "This dress fits perfectly and looks elegant."
-predicted_category = predict_category(user_input, logReg, vectorizer, le)
+predicted_category = predict_category(user_input, first_model, vectorizer, le)
 print(predicted_category)
 
 ```
@@ -100,14 +100,14 @@ print(predicted_category)
 ## Saving Models
 
 The following objects are saved for future use:
-vectorizer.pkl → TF-IDF vectorizer
-logReg.pkl → Trained Logistic Regression model
-label_encoder.pkl → Label encoder for translating numeric labels back to categories
+- vectorizer.pkl → TF-IDF vectorizer
+- first_model.pkl → Trained Logistic Regression model
+- label_encoder.pkl → Label encoder for translating numeric labels back to categories
 
 ```python
 import pickle
 pickle.dump(vectorizer, open("vectorizer.pkl", "wb"))
-pickle.dump(logReg, open("logReg.pkl", "wb"))
+pickle.dump(first_model, open("first_model.pkl", "wb"))
 pickle.dump(le, open("label_encoder.pkl", "wb"))
 
 ```
@@ -115,7 +115,6 @@ pickle.dump(le, open("label_encoder.pkl", "wb"))
 ## Requirements
 
 Python 3.x
-
 pandas, numpy, scikit-learn, nltk, matplotlib, seaborn, wordcloud
 
 ## Conclusion
