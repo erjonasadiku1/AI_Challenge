@@ -29,14 +29,13 @@ This project focuses on analyzing and classifying customer reviews for women's c
    - Lowercasing  
    - Removing punctuation and extra spaces  
    - Removing stopwords (for TF-IDF vectorization)  
-   - Optional stemming using `PorterStemmer`
 
 3. **Encoding categorical data:**  
-   - Target labels (`Class Name`) are encoded using **Label Encoding**.  
+   - Target labels (`Class Name`) are encoded using label encoding.  
    - Categorical features (`Division Name`, `Department Name`) are one-hot encoded.
 
 4. **Text feature extraction:**  
-   - Reviews are transformed into numeric features using **TF-IDF Vectorization** (top 5000 features).
+   - Reviews are transformed into numeric features using TF-IDF Vectorization (top 5000 features).
 
 ---
 
@@ -53,12 +52,12 @@ This project focuses on analyzing and classifying customer reviews for women's c
 Two models were trained and evaluated:
 
 1. **Logistic Regression**  
-   - Accuracy: ~62%  
+   - Accuracy: ~58%  
    - Performs well for larger, clearer classes.  
    - Struggles with smaller or ambiguous classes due to class imbalance.
 
 2. **Naive Bayes (MultinomialNB)**  
-   - Accuracy: ~44%  
+   - Accuracy: ~55%  
    - Performs well only for the most common classes.  
    - Poor performance for smaller or less frequent categories.
 
@@ -74,13 +73,13 @@ The confusion matrix for Logistic Regression confirms:
 
 - Strong performance for the most frequent classes.  
 - Misclassifications occur primarily in smaller or similar categories.  
-- Strategies to improve results include balancing the dataset or adjusting class weights.
+- Strategies to improve results include balancing the dataset.
 
 ---
 
 ## Predicting New Reviews
 
-A helper function allows predicting the clothing category for new reviews:
+A function allows predicting the clothing category for new reviews:
 
 ```python
 def predict_category(text, model, vectorizer, label_encoder):
@@ -112,13 +111,8 @@ pickle.dump(le, open("label_encoder.pkl", "wb"))
 
 ```
 
-## Requirements
-
-Python 3.x
-pandas, numpy, scikit-learn, nltk, matplotlib, seaborn, wordcloud
-
 ## Conclusion
 
 Logistic Regression outperforms Naive Bayes on this dataset.
 Class imbalance and sparse classes are the main challenges.
-Future improvements could include more advanced text embeddings (e.g., BERT), balancing the dataset, or using ensemble methods for better accuracy.
+Future improvements could include more advanced text embeddings, balancing the dataset, or using ensemble methods for better accuracy.
